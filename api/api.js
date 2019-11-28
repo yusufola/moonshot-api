@@ -1,6 +1,8 @@
 /**
  * third party libraries
  */
+const dotenv = require('dotenv');
+dotenv.config()
 const bodyParser = require('body-parser');
 const express = require('express');
 const helmet = require('helmet');
@@ -57,5 +59,6 @@ server.listen(config.port, () => {
     console.error(`NODE_ENV is set to ${environment}, but only production and development are valid.`);
     process.exit(1);
   }
+  console.log(`Running on http://localhost:${config.port}`)
   return DB;
 });
