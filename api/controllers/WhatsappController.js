@@ -25,6 +25,7 @@ const WhatsappController = () => {
         return res.status(200).send(twiml.toString());
           
       } catch (error) {
+        console.log(error)
         twiml.message('Unable to process your message');
          
         res.set('Content-Type', 'text/xml');
