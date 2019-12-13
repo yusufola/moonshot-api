@@ -8,11 +8,7 @@ const nlpService = () => {
       let result;
       switch (message) {
         case 'Hi':
-          response = `Hi welcome to Moonshot. 
-
-Which country do you want to send money to and how much?
-          
-e.g Send 1000 cedis from Ghana to Nigeria
+          response = `Hi, you are not tracking any priorites currently
           `
           break;
           case 'Send 500cedis from Ghana to Nigeria':
