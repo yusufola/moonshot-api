@@ -6,9 +6,7 @@ const classifier = new NlpManager({
   languages: ['en'],
   action: {
     greet: (input, a)=> {
-      return `Hi!
-      You are not tracking any goals/priorites.
-      What is your current topmost priority?
+      return `${input}\nYou are not tracking any goals/priorites. \nWhat is your current topmost priority?
       `
     }
   }
@@ -49,8 +47,8 @@ const nlpService = () => {
       classifier.addAnswer('en', 'input.email', 'Greetings {{email}}');
       classifier.addAnswer('en', 'greetings.bye', 'Till next time');
       classifier.addAnswer('en', 'greetings.bye', 'see you soon!');
-      // classifier.addAnswer('en', 'greetings.hello', 'Hey there!');
-      // classifier.addAnswer('en', 'greetings.hello', 'Greetings!');
+      classifier.addAnswer('en', 'greetings.hello', 'Hey there!');
+      classifier.addAnswer('en', 'greetings.hello', 'Greetings!');
       classifier.addAction('greetings.hello', 'greet', ['']);
       
 
