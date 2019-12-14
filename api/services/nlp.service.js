@@ -2,7 +2,17 @@ const uuid = require('uuid');
 const fs = require('fs');
 const { NlpManager, ConversationContext } = require('node-nlp')
 
-const classifier = new NlpManager({ languages: ['en'] });
+const classifier = new NlpManager({ 
+  languages: ['en'],
+  action: {
+    greet: (input, a)=> {
+      return `Hi!
+      You are not tracking any goals/priorites.
+      What is your current topmost priority?
+      `
+    }
+  }
+ });
 const context = new ConversationContext()
 
 
@@ -17,8 +27,7 @@ const nlpService = () => {
       }
 
       result = await classifier.process('en', message, context);
-      console.log(message, result);
-
+      console.log(result)
       return {response: result.answer}
   };
 
@@ -40,8 +49,10 @@ const nlpService = () => {
       classifier.addAnswer('en', 'input.email', 'Greetings {{email}}');
       classifier.addAnswer('en', 'greetings.bye', 'Till next time');
       classifier.addAnswer('en', 'greetings.bye', 'see you soon!');
-      classifier.addAnswer('en', 'greetings.hello', 'Hey there!');
-      classifier.addAnswer('en', 'greetings.hello', 'Greetings!');
+      // classifier.addAnswer('en', 'greetings.hello', 'Hey there!');
+      // classifier.addAnswer('en', 'greetings.hello', 'Greetings!');
+      classifier.addAction('greetings.hello', 'greet', ['']);
+      
 
 
 

@@ -2,7 +2,8 @@
   "settings": {
     "languages": [
       "en"
-    ]
+    ],
+    "action": {}
   },
   "nluManager": {
     "settings": {},
@@ -418,18 +419,19 @@
         {
           "response": "see you soon!"
         }
-      ],
-      "greetings.hello": [
-        {
-          "response": "Hey there!"
-        },
-        {
-          "response": "Greetings!"
-        }
       ]
     }
   },
-  "actions": {},
+  "actions": {
+    "greetings.hello": [
+      {
+        "action": "greet",
+        "parameters": [
+          ""
+        ]
+      }
+    ]
+  },
   "utteranceDict": {
     "?": "help"
   }
