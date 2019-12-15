@@ -13,7 +13,6 @@ const WhatsappController = () => {
     const incoming = async (req, res) => {
       const { body } = req;
       const message = body.Body
-      console.log(body)
       const twiml = new MessagingResponse();
 
       try {
@@ -21,6 +20,7 @@ const WhatsappController = () => {
         const response = nlpResult.response
 
         twiml.message(response);
+        twiml.message("e.g Launch first startup");
 
         res.set('Content-Type', 'text/xml');
   
