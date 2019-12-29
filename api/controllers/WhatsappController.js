@@ -1,6 +1,5 @@
 const twilio = require('twilio')
 const nlpService = require('../services/nlp.service')
-const User = require('../models/User')
 const {
     TWILIO_SID: accountSid,
     TWILIO_KEY: TwilloAuthToken

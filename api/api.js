@@ -16,6 +16,7 @@ const cors = require('cors');
 const config = require('../config/');
 const dbService = require('./services/db.service');
 const auth = require('./policies/auth.policy');
+const userIdentification = require('./policies/user-identification.policy');
 
 // environment: development, staging, testing, production
 const environment = process.env.NODE_ENV;
@@ -46,6 +47,8 @@ app.use(bodyParser.json());
 
 // secure your private routes with jwt authentication middleware
 app.all('/private/*', (req, res, next) => auth(req, res, next));
+
+app.all('/public/whatsapp/*', (req, res, next) => userIdentification(req, res, next));
 
 // fill routes for express application
 app.use('/public', mappedOpenRoutes);

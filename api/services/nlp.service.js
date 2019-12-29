@@ -1,15 +1,11 @@
 const uuid = require('uuid');
 const fs = require('fs');
-const { NlpManager, ConversationContext } = require('node-nlp')
+const { NlpManager, ConversationContext } = require('node-nlp');
+const actionService = require('./action.service');
 
 const classifier = new NlpManager({ 
   languages: ['en'],
-  action: {
-    greet: (input, a)=> {
-      return `${input}\nYou are not tracking any goals/priorites. \nWhat is your current topmost priority?
-      `
-    }
-  }
+  action: actionService()
  });
 const context = new ConversationContext()
 
@@ -25,7 +21,6 @@ const nlpService = () => {
       }
 
       result = await classifier.process('en', message, context);
-      console.log(result)
       return {response: result.answer}
   };
 
