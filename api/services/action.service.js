@@ -1,10 +1,9 @@
+const greetAction = require("../actions/greet.action");
+
 const actionService = (req, res, next) => {
-  const greet = (input, a) => {
-    return `${input} @${req.user.username ||
-      req.user
-        .mobile_number}\nYou are not tracking any goals/priorites. \nWhat is your current topmost priority?
-        `;
-  };
+  const { welcome } = greetAction(req, res, next);
+
+  const greet = (input, a) => welcome(input, a);
 
   return {
     greet

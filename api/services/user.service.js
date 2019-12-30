@@ -5,7 +5,7 @@ const userService = () => {
     try {
       const user = await User.findOne({
         $or: [{ username: data }, { mobile_number: data }]
-      });
+      }).populate("tasks");
       return user;
     } catch (error) {
       throw error;
