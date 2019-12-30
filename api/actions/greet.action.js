@@ -13,7 +13,8 @@ const greetAction = (req, res, next) => {
       if (userTasks.length > 0) {
         const taskToString = await userTasks.reduce(
           (string, currentTask, i) => {
-            return `(${i + 1}) ${currentTask.title}\n`;
+            string += `(${i + 1}) ${currentTask.title}.\n`;
+            return string;
           },
           ""
         );

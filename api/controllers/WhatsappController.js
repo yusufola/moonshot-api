@@ -16,7 +16,7 @@ const WhatsappController = () => {
       const response = nlpResult.response;
 
       twiml.message(response);
-      twiml.message("e.g Launch first startup");
+      // twiml.message("e.g Launch first startup");
 
       res.set("Content-Type", "text/xml");
 

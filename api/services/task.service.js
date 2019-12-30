@@ -13,7 +13,16 @@ const taskService = () => {
 
   const getByAuthor = async authorId => {
     try {
-      const tasks = await Task.find({});
+      const tasks = await Task.find({ author: authorId });
+      return tasks;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const deleteAllAuthorTasks = async authorId => {
+    try {
+      const tasks = await Task.deleteMany({ author: authorId });
       return tasks;
     } catch (error) {
       throw error;
@@ -22,7 +31,8 @@ const taskService = () => {
 
   return {
     create,
-    getByAuthor
+    getByAuthor,
+    deleteAllAuthorTasks
   };
 };
 

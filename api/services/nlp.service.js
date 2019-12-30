@@ -35,6 +35,10 @@ const nlpService = (req, res, next) => {
     classifier.addDocument("en", "hi", "greetings.hello");
     classifier.addDocument("en", "howdy", "greetings.hello");
     classifier.addDocument("en", "%email%", "input.email");
+    classifier.addDocument("en", "i want to %string%", "task.add");
+    classifier.addDocument("en", "i will %string%", "task.add");
+    classifier.addDocument("en", "clear all my tasks", "task.deleteAll");
+    classifier.addDocument("en", "delete all my tasks", "task.deleteAll");
 
     // Train also the NLG
     classifier.addAnswer("en", "input.email", "Greetings {{email}}");
@@ -42,7 +46,13 @@ const nlpService = (req, res, next) => {
     classifier.addAnswer("en", "greetings.bye", "see you soon!");
     classifier.addAnswer("en", "greetings.hello", "Hey there!");
     classifier.addAnswer("en", "greetings.hello", "Greetings!");
+    classifier.addAnswer("en", "task.add", "{{taskToAdd}}");
+    //actions
     classifier.addAction("greetings.hello", "greet", [""]);
+    classifier.addAction("task.add", "createTaskAction", [""]);
+    classifier.addAction("task.deleteAll", "deleteAllTasksAction", [""]);
+
+    const string = classifier.addRegexEntity("string", "en", /\w/gi);
 
     await classifier.train();
     await classifier.save();
