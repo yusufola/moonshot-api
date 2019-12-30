@@ -18,7 +18,7 @@ const greetAction = (req, res, next) => {
           },
           ""
         );
-        response += `*You have _${userTasks.length}_ task``${
+        response += `*You have _${userTasks.length}_ task${
           userTasks.length > 1 ? "s" : ""
         }*\n${taskToString}`;
       } else {
