@@ -119,7 +119,7 @@ const taskAction = (req, res, next) => {
         taskId: task.id
       });
 
-      let response = `Well done!\n _${task.title}_ ✅ has been checked as done.\n.`;
+      let response = `Well done! 👏\n_${task.title}_ has been checked as done. ✅\n`;
 
       response += `<br>*_Hint_* | _Say something like_:\n\n_*show completed* (shows all activities you are done with)_`;
 
