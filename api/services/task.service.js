@@ -29,10 +29,51 @@ const taskService = () => {
     }
   };
 
+  const deleteOne = async ({ authorId, taskId }) => {
+    try {
+      const task = await Task.findOneAndRemove({
+        _id: taskId,
+        author: authorId
+      });
+      return task;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const toggleCompletion = async ({ taskId, isDone }) => {
+    try {
+      const task = await Task.findByIdAndUpdate(taskId, { isDone });
+      return task;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const update = async (taskId, data) => {
+    try {
+      const task = await Task.findByIdAndUpdate(taskId, data);
+      return task;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const findByTitle = async title => {
+    const task = await Task.findOne({
+      title: { $regex: title, $options: "i" }
+    });
+    return task;
+  };
+
   return {
     create,
     getByAuthor,
-    deleteAllAuthorTasks
+    deleteAllAuthorTasks,
+    deleteOne,
+    toggleCompletion,
+    update,
+    findByTitle
   };
 };
 
