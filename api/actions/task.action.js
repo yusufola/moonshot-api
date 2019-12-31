@@ -149,7 +149,7 @@ const taskAction = (req, res, next) => {
           `;
       }
 
-      response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to clean my workspace* (adds an activity to do)_\n\n_*show plans* (see planned activities)_\n\n_*what can you do?* (tells you eveything I can do)_`;
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*done with 1* (marks first task/_or any number you provide_ as done)_\n\n_*show plans* (see planned activities)_\n\n*done with 1* (marks first task/or any number you provide as done)_\n\n_*cancel 1* (deletes first task/or any number you provide)_`;
 
       return response;
     } catch (error) {
