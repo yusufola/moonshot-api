@@ -43,6 +43,11 @@ const nlpService = (req, res, next) => {
     classifier.addDocument("en", "wats up", "greetings.hello");
     classifier.addDocument("en", "wad up", "greetings.hello");
 
+    //about bot
+    classifier.addDocument("en", "wat can you do", "greetings.ability");
+    classifier.addDocument("en", "what is your ability", "greetings.ability");
+    classifier.addDocument("en", "what can you do", "greetings.ability");
+
     //input email
     classifier.addDocument("en", "%email%", "input.email");
 
@@ -53,18 +58,27 @@ const nlpService = (req, res, next) => {
     //clear all tasks
     classifier.addDocument("en", "clear all my tasks", "task.deleteAll");
 
+    classifier.addDocument("en", "show plan", "task.showPending");
+    classifier.addDocument("en", "show pending plans", "task.showPending");
+    classifier.addDocument("en", "show pending plans", "task.showPending");
+    classifier.addDocument("en", "show tasks", "task.showPending");
+    classifier.addDocument("en", "display tasks", "task.showPending");
+    classifier.addDocument("en", "display plan", "task.showPending");
+    classifier.addDocument("en", "view plan", "task.showPending");
+
     //delete task
     classifier.addDocument("en", "delete %number%", "task.delete");
-
-    //mark task as completed
-    classifier.addDocument("en", "done with %number%", "task.complete");
-    classifier.addDocument("en", "completed task %number%", "task.complete");
+    classifier.addDocument("en", "cancel %number%", "task.delete");
     classifier.addDocument("en", "remove %number%", "task.delete");
     classifier.addDocument(
       "en",
       "delete %number% from list of tasks",
       "task.delete"
     );
+
+    //mark task as completed
+    classifier.addDocument("en", "done with %number%", "task.complete");
+    classifier.addDocument("en", "completed task %number%", "task.complete");
 
     // Train also the NLG
     classifier.addAnswer("en", "input.email", "Greetings {{email}}");
@@ -76,8 +90,14 @@ const nlpService = (req, res, next) => {
     classifier.addAnswer("en", "greetings.hello", "Hi!");
     //add tasks
     classifier.addAnswer("en", "task.add", "{{taskToAdd}}");
+
+    //display tasks
+    classifier.addAnswer("en", "task.showPending", "");
+    classifier.addAction("task.showPending", "showPendingAction", [""]);
+
     //actions
     classifier.addAction("greetings.hello", "greet", [""]);
+    classifier.addAction("greetings.ability", "abilityEnquiryAction", [""]);
     classifier.addAction("task.add", "createTaskAction", [context]);
     classifier.addAction("task.deleteAll", "deleteAllTasksAction", [""]);
     classifier.addAction("task.delete", "deleteTaskAction", [context]);

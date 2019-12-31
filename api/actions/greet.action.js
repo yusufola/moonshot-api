@@ -36,8 +36,31 @@ const greetAction = (req, res, next) => {
     }
   };
 
+  const abilityEnquiry = async (input, a) => {
+    try {
+      const { user } = req;
+      const username = user.username || `@${user.mobile_number}`;
+
+      const userTasks = await taskService().getByAuthor(req.user.id);
+
+      let response = `Your wish is my command.🤖 I'm always available 24/7 to help manage your personal schedules and plan your activities.\n\n`;
+
+      response += `<br>*Try saying*\n\n
+_*I want to clean my workspace* (adds an activity to do)_\n\n_
+*show plans* (see planned activities)_\n\n_
+*done* (marks an activity as done after you choose)_\n\n_
+*cancel a plan* (delete an activity after you choose)_\n\n_
+*what can you do?* (tells you eveything I can do)_`;
+
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return {
-    welcome
+    welcome,
+    abilityEnquiry
   };
 };
 

@@ -11,6 +11,7 @@ const taskService = () => {
     }
   };
 
+  //returns pending tasks
   const getByAuthor = async authorId => {
     try {
       const tasks = await Task.find({ author: authorId, isDone: false });
