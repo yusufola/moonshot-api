@@ -20,7 +20,7 @@ const greetAction = (req, res, next) => {
           },
           ""
         );
-        response += `*You have _${userTasks.length}_ thing${
+        response += `<br>*You have _${userTasks.length}_ thing${
           userTasks.length > 1 ? "s" : ""
         } to do*\n${taskToString}`;
       } else {
