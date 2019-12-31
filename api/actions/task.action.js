@@ -129,7 +129,7 @@ const taskAction = (req, res, next) => {
 
       const userTasks = await taskService().getByAuthor(req.user.id);
 
-      let response;
+      let response = "";
 
       if (userTasks.length > 0) {
         const taskToString = await userTasks.reduce(
@@ -145,7 +145,7 @@ const taskAction = (req, res, next) => {
           userTasks.length > 1 ? "s" : ""
         } to do*\n\n${taskToString}`;
       } else {
-        response += `<br>*You currently have nothing planned*.\n\nWhat do you plan to do later?
+        response += `*You currently have nothing planned*.\n\nWhat do you plan to do later?
           `;
       }
 

@@ -1,0 +1,1605 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "action": {}
+  },
+  "nluManager": {
+    "settings": {},
+    "languages": [
+      "en"
+    ],
+    "intentDomains": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "language": "en",
+          "useNoneFeature": true,
+          "config": {
+            "activation": "leaky-relu",
+            "hiddenLayers": [],
+            "iterations": 20000,
+            "learningRate": 0.7,
+            "errorThresh": 0.00005,
+            "momentum": 0.5,
+            "deltaErrorThresh": 0.000001,
+            "maxDecimals": 9,
+            "leakyReluAlpha": 0.08,
+            "timeout": 120000
+          }
+        },
+        "language": "en",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": false,
+        "keepStopwords": true,
+        "stemDict": {
+          "for,goodby,now": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
+          "bye,bye,care,take": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
+          "later,okay,see,you": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
+          "bye,for,now": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
+          "go,i,must": {
+            "domain": "default",
+            "intent": "greetings.bye"
+          },
+          "hello": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "hi": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "are,do,how,you": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "far,how": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "hey,there": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "howdi": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "up,what": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "up,wat": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "up,wad": {
+            "domain": "default",
+            "intent": "greetings.hello"
+          },
+          "can,do,wat,you": {
+            "domain": "default",
+            "intent": "greetings.ability"
+          },
+          "abil,is,what,your": {
+            "domain": "default",
+            "intent": "greetings.ability"
+          },
+          "can,do,what,you": {
+            "domain": "default",
+            "intent": "greetings.ability"
+          },
+          "email": {
+            "domain": "default",
+            "intent": "input.email"
+          },
+          "i,string,to,want": {
+            "domain": "default",
+            "intent": "task.add"
+          },
+          "i,string,will": {
+            "domain": "default",
+            "intent": "task.add"
+          },
+          "all,clear,my,task": {
+            "domain": "default",
+            "intent": "task.deleteAll"
+          },
+          "plan,show": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "pend,plan,show": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "show,task": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "display,task": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "display,plan": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "plan,view": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "task,view": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "activ,pend,show": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "activ,show": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "activ,display": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "activ,view": {
+            "domain": "default",
+            "intent": "task.showPending"
+          },
+          "delet,number": {
+            "domain": "default",
+            "intent": "task.delete"
+          },
+          "cancel,number": {
+            "domain": "default",
+            "intent": "task.delete"
+          },
+          "number,remov": {
+            "domain": "default",
+            "intent": "task.delete"
+          },
+          "delet,from,list,number,of,task": {
+            "domain": "default",
+            "intent": "task.delete"
+          },
+          "done,number,with": {
+            "domain": "default",
+            "intent": "task.complete"
+          },
+          "complet,number,task": {
+            "domain": "default",
+            "intent": "task.complete"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "greetings.ability": "default",
+          "input.email": "default",
+          "task.add": "default",
+          "task.deleteAll": "default",
+          "task.showPending": "default",
+          "task.delete": "default",
+          "task.complete": "default"
+        },
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "en",
+              "useNoneFeature": true,
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.7,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.08,
+                "timeout": 120000
+              }
+            },
+            "language": "en",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "goodby",
+                  "for",
+                  "now"
+                ]
+              },
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "bye",
+                  "bye",
+                  "take",
+                  "care"
+                ]
+              },
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "okay",
+                  "see",
+                  "you",
+                  "later"
+                ]
+              },
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "bye",
+                  "for",
+                  "now"
+                ]
+              },
+              {
+                "intent": "greetings.bye",
+                "tokens": [
+                  "i",
+                  "must",
+                  "go"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "hello"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "hi"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "how",
+                  "are",
+                  "you",
+                  "do"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "how",
+                  "far"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "hey",
+                  "there"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "howdi"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "what",
+                  "up"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "wat",
+                  "up"
+                ]
+              },
+              {
+                "intent": "greetings.hello",
+                "tokens": [
+                  "wad",
+                  "up"
+                ]
+              },
+              {
+                "intent": "greetings.ability",
+                "tokens": [
+                  "wat",
+                  "can",
+                  "you",
+                  "do"
+                ]
+              },
+              {
+                "intent": "greetings.ability",
+                "tokens": [
+                  "what",
+                  "is",
+                  "your",
+                  "abil"
+                ]
+              },
+              {
+                "intent": "greetings.ability",
+                "tokens": [
+                  "what",
+                  "can",
+                  "you",
+                  "do"
+                ]
+              },
+              {
+                "intent": "input.email",
+                "tokens": [
+                  "email"
+                ]
+              },
+              {
+                "intent": "task.add",
+                "tokens": [
+                  "i",
+                  "want",
+                  "to",
+                  "string"
+                ]
+              },
+              {
+                "intent": "task.add",
+                "tokens": [
+                  "i",
+                  "will",
+                  "string"
+                ]
+              },
+              {
+                "intent": "task.deleteAll",
+                "tokens": [
+                  "clear",
+                  "all",
+                  "my",
+                  "task"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "show",
+                  "plan"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "show",
+                  "pend",
+                  "plan"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "show",
+                  "task"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "display",
+                  "task"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "display",
+                  "plan"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "view",
+                  "plan"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "view",
+                  "task"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "show",
+                  "pend",
+                  "activ"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "display",
+                  "activ"
+                ]
+              },
+              {
+                "intent": "task.showPending",
+                "tokens": [
+                  "view",
+                  "activ"
+                ]
+              },
+              {
+                "intent": "task.delete",
+                "tokens": [
+                  "delet",
+                  "number"
+                ]
+              },
+              {
+                "intent": "task.delete",
+                "tokens": [
+                  "cancel",
+                  "number"
+                ]
+              },
+              {
+                "intent": "task.delete",
+                "tokens": [
+                  "remov",
+                  "number"
+                ]
+              },
+              {
+                "intent": "task.delete",
+                "tokens": [
+                  "delet",
+                  "number",
+                  "from",
+                  "list",
+                  "of",
+                  "task"
+                ]
+              },
+              {
+                "intent": "task.complete",
+                "tokens": [
+                  "done",
+                  "with",
+                  "number"
+                ]
+              },
+              {
+                "intent": "task.complete",
+                "tokens": [
+                  "complet",
+                  "task",
+                  "number"
+                ]
+              }
+            ],
+            "features": {
+              "goodby": 1,
+              "for": 2,
+              "now": 2,
+              "bye": 3,
+              "take": 1,
+              "care": 1,
+              "okay": 1,
+              "see": 1,
+              "you": 4,
+              "later": 1,
+              "i": 3,
+              "must": 1,
+              "go": 1,
+              "hello": 1,
+              "hi": 1,
+              "how": 2,
+              "are": 1,
+              "do": 3,
+              "far": 1,
+              "hey": 1,
+              "there": 1,
+              "howdi": 1,
+              "what": 3,
+              "up": 3,
+              "wat": 2,
+              "wad": 1,
+              "can": 2,
+              "is": 1,
+              "your": 1,
+              "abil": 1,
+              "email": 1,
+              "want": 1,
+              "to": 1,
+              "string": 2,
+              "will": 1,
+              "clear": 1,
+              "all": 1,
+              "my": 1,
+              "task": 6,
+              "show": 4,
+              "plan": 4,
+              "pend": 2,
+              "display": 3,
+              "view": 3,
+              "activ": 3,
+              "delet": 2,
+              "number": 6,
+              "cancel": 1,
+              "remov": 1,
+              "from": 1,
+              "list": 1,
+              "of": 1,
+              "done": 1,
+              "with": 1,
+              "complet": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "en",
+                "useNoneFeature": true,
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.7,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.08,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  56,
+                  10
+                ],
+                "layers": [
+                  {
+                    "goodby": {},
+                    "for": {},
+                    "now": {},
+                    "bye": {},
+                    "take": {},
+                    "care": {},
+                    "okay": {},
+                    "see": {},
+                    "you": {},
+                    "later": {},
+                    "i": {},
+                    "must": {},
+                    "go": {},
+                    "hello": {},
+                    "hi": {},
+                    "how": {},
+                    "are": {},
+                    "do": {},
+                    "far": {},
+                    "hey": {},
+                    "there": {},
+                    "howdi": {},
+                    "what": {},
+                    "up": {},
+                    "wat": {},
+                    "wad": {},
+                    "can": {},
+                    "is": {},
+                    "your": {},
+                    "abil": {},
+                    "email": {},
+                    "want": {},
+                    "to": {},
+                    "string": {},
+                    "will": {},
+                    "clear": {},
+                    "all": {},
+                    "my": {},
+                    "task": {},
+                    "show": {},
+                    "plan": {},
+                    "pend": {},
+                    "display": {},
+                    "view": {},
+                    "activ": {},
+                    "delet": {},
+                    "number": {},
+                    "cancel": {},
+                    "remov": {},
+                    "from": {},
+                    "list": {},
+                    "of": {},
+                    "done": {},
+                    "with": {},
+                    "complet": {},
+                    "nonefeature": {}
+                  },
+                  {
+                    "greetings.bye": {
+                      "bias": 1.009671966,
+                      "weights": {
+                        "goodby": 3.627216339,
+                        "for": 3.842259407,
+                        "now": 3.842259407,
+                        "bye": 3.938991785,
+                        "take": 3.723948717,
+                        "care": 3.723948717,
+                        "okay": 3.215544462,
+                        "see": 3.215544462,
+                        "you": 1.824542999,
+                        "later": 3.215544462,
+                        "i": 2.419155121,
+                        "must": 4.527488708,
+                        "go": 4.527488708,
+                        "hello": -1.029429555,
+                        "hi": -1.018701673,
+                        "how": -1.0381037,
+                        "are": -0.651068628,
+                        "do": -1.391002059,
+                        "far": -0.387035191,
+                        "hey": -0.592464983,
+                        "there": -0.592464983,
+                        "howdi": -1.005433798,
+                        "what": -0.778686762,
+                        "up": -0.906114459,
+                        "wat": -0.754268646,
+                        "wad": -0.336936116,
+                        "can": -0.73993355,
+                        "is": -0.223843589,
+                        "your": -0.223843589,
+                        "abil": -0.223843589,
+                        "email": -0.99059242,
+                        "want": -0.791383445,
+                        "to": -0.791383445,
+                        "string": -2.108334303,
+                        "will": -1.31695044,
+                        "clear": -0.194581732,
+                        "all": -0.194581732,
+                        "my": -0.194581732,
+                        "task": -0.64551723,
+                        "show": -0.544512928,
+                        "plan": -0.641213953,
+                        "pend": -0.207098514,
+                        "display": -0.554789722,
+                        "view": -0.531107366,
+                        "activ": -0.540948331,
+                        "delet": -0.255616248,
+                        "number": -0.852543652,
+                        "cancel": -0.238048822,
+                        "remov": -0.220226824,
+                        "from": -0.002609047,
+                        "list": -0.002609047,
+                        "of": -0.002609047,
+                        "done": -0.138572946,
+                        "with": -0.138572946,
+                        "complet": -0.000078739,
+                        "nonefeature": -0.955124974
+                      }
+                    },
+                    "greetings.hello": {
+                      "bias": 4.505351266,
+                      "weights": {
+                        "goodby": -1.265311718,
+                        "for": -1.607172251,
+                        "now": -1.607172251,
+                        "bye": -1.7201792,
+                        "take": -1.378318906,
+                        "care": -1.378318906,
+                        "okay": -1.080276251,
+                        "see": -1.080276251,
+                        "you": -1.242339492,
+                        "later": -1.080276251,
+                        "i": -2.449045897,
+                        "must": -1.011468053,
+                        "go": -1.011468053,
+                        "hello": 7.679385662,
+                        "hi": 7.692906857,
+                        "how": 5.782236099,
+                        "are": 3.542506456,
+                        "do": -0.162062526,
+                        "far": 2.239726782,
+                        "hey": 3.988663435,
+                        "there": 3.988663435,
+                        "howdi": 7.580770016,
+                        "what": 0.559621453,
+                        "up": 7.294746876,
+                        "wat": 0.570073783,
+                        "wad": 0.760373771,
+                        "can": -3.704569817,
+                        "is": -1.700104952,
+                        "your": -1.700104952,
+                        "abil": -1.700104952,
+                        "email": -4.248583317,
+                        "want": -0.63469398,
+                        "to": -0.63469398,
+                        "string": -1.437579036,
+                        "will": -0.802885175,
+                        "clear": -0.700986385,
+                        "all": -0.700986385,
+                        "my": -0.700986385,
+                        "task": -2.429275036,
+                        "show": -2.100275755,
+                        "plan": -2.422987223,
+                        "pend": -0.675922453,
+                        "display": -2.194921732,
+                        "view": -2.182749987,
+                        "activ": -2.335121632,
+                        "delet": -1.019087076,
+                        "number": -3.526302576,
+                        "cancel": -1.002798796,
+                        "remov": -0.987131536,
+                        "from": -0.008201954,
+                        "list": -0.008201954,
+                        "of": -0.008201954,
+                        "done": -0.517037451,
+                        "with": -0.517037451,
+                        "complet": -0.000247529,
+                        "nonefeature": -4.109507084
+                      }
+                    },
+                    "greetings.ability": {
+                      "bias": -0.191569001,
+                      "weights": {
+                        "goodby": -0.117947616,
+                        "for": -0.157442302,
+                        "now": -0.157442302,
+                        "bye": -0.160023242,
+                        "take": -0.120528556,
+                        "care": -0.120528556,
+                        "okay": -0.695820391,
+                        "see": -0.695820391,
+                        "you": 2.051977158,
+                        "later": -0.695820391,
+                        "i": -0.339476377,
+                        "must": -0.028546499,
+                        "go": -0.028546499,
+                        "hello": -0.138523012,
+                        "hi": -0.13296178,
+                        "how": -2.301802397,
+                        "are": -2.300094128,
+                        "do": 2.747797251,
+                        "far": -0.001708221,
+                        "hey": -0.046662878,
+                        "there": -0.046662878,
+                        "howdi": -0.054391216,
+                        "what": 2.85363102,
+                        "up": -2.641511679,
+                        "wat": 2.828204155,
+                        "can": 5.047890663,
+                        "is": 3.275455475,
+                        "your": 3.275455475,
+                        "abil": 3.275455475,
+                        "email": -0.279525548,
+                        "want": -0.159497425,
+                        "to": -0.159497425,
+                        "string": -0.310929835,
+                        "will": -0.15143244,
+                        "clear": -0.151296079,
+                        "all": -0.151296079,
+                        "my": -0.151296079,
+                        "task": -0.457099646,
+                        "show": -0.410790473,
+                        "plan": -0.452926546,
+                        "pend": -0.164327368,
+                        "display": -0.329614133,
+                        "view": -0.286802679,
+                        "activ": -0.271740556,
+                        "delet": -0.133293509,
+                        "number": -0.429232925,
+                        "cancel": -0.116912931,
+                        "remov": -0.101321764,
+                        "from": -0.003167744,
+                        "list": -0.003167744,
+                        "of": -0.003167744,
+                        "done": -0.077609107,
+                        "with": -0.077609107,
+                        "complet": -0.000095601,
+                        "nonefeature": -0.190021053
+                      }
+                    },
+                    "input.email": {
+                      "bias": 0.973684711,
+                      "weights": {
+                        "goodby": -0.275431335,
+                        "for": -0.346283793,
+                        "now": -0.346283793,
+                        "bye": -0.369635344,
+                        "take": -0.298782825,
+                        "care": -0.298782825,
+                        "okay": -0.201115385,
+                        "see": -0.201115385,
+                        "you": -0.369503021,
+                        "later": -0.201115385,
+                        "i": -0.524269819,
+                        "must": -0.220966533,
+                        "go": -0.220966533,
+                        "hello": -0.844321549,
+                        "hi": -0.83049047,
+                        "how": -0.502166152,
+                        "are": -0.077182606,
+                        "do": -0.168387502,
+                        "far": -0.424983561,
+                        "hey": -0.461318195,
+                        "there": -0.461318195,
+                        "howdi": -0.804264009,
+                        "what": -0.345461547,
+                        "up": -0.639540732,
+                        "wat": -0.304522872,
+                        "wad": -0.275995702,
+                        "can": -0.091204949,
+                        "is": -0.195234269,
+                        "your": -0.195234269,
+                        "abil": -0.195234269,
+                        "email": 10.883485794,
+                        "want": -0.126677498,
+                        "to": -0.126677498,
+                        "string": -0.303303331,
+                        "will": -0.176625922,
+                        "clear": -0.151843295,
+                        "all": -0.151843295,
+                        "my": -0.151843295,
+                        "task": -0.525247931,
+                        "show": -0.454936653,
+                        "plan": -0.523854673,
+                        "pend": -0.135152489,
+                        "display": -0.474804342,
+                        "view": -0.472205728,
+                        "activ": -0.505408704,
+                        "delet": -0.221406713,
+                        "number": -0.763293326,
+                        "cancel": -0.217149824,
+                        "remov": -0.213185206,
+                        "from": -0.000717434,
+                        "list": -0.000717434,
+                        "of": -0.000717434,
+                        "done": -0.111547746,
+                        "with": -0.111547746,
+                        "complet": -0.000004177,
+                        "nonefeature": -0.874413311
+                      }
+                    },
+                    "task.add": {
+                      "bias": 0.155019983,
+                      "weights": {
+                        "goodby": -0.112148188,
+                        "for": -0.16697073,
+                        "now": -0.16697073,
+                        "bye": -0.174819589,
+                        "take": -0.119997054,
+                        "care": -0.119997054,
+                        "okay": -0.100117765,
+                        "see": -0.100117765,
+                        "you": -0.147153571,
+                        "later": -0.100117765,
+                        "i": 3.48911643,
+                        "must": -1.818823099,
+                        "go": -1.818823099,
+                        "hello": -0.159222916,
+                        "hi": -0.156538263,
+                        "how": -0.122688495,
+                        "are": -0.035570741,
+                        "do": -0.047035787,
+                        "far": -0.087117754,
+                        "hey": -0.097467616,
+                        "there": -0.097467616,
+                        "howdi": -0.153714046,
+                        "what": -0.099453859,
+                        "up": -0.163162634,
+                        "wat": -0.065952264,
+                        "wad": -0.053456172,
+                        "can": -0.011465044,
+                        "is": -0.044234656,
+                        "your": -0.044234656,
+                        "abil": -0.044234656,
+                        "email": -0.151525661,
+                        "want": 1.783453107,
+                        "to": 1.783453107,
+                        "string": 5.307939529,
+                        "will": 3.524485588,
+                        "clear": -0.141111881,
+                        "all": -0.141111881,
+                        "my": -0.141111881,
+                        "task": -0.414317489,
+                        "show": -0.38250035,
+                        "plan": -0.414937407,
+                        "pend": -0.155131206,
+                        "display": -0.300839514,
+                        "view": -0.263457686,
+                        "activ": -0.260772526,
+                        "delet": -0.128107861,
+                        "number": -0.41673705,
+                        "cancel": -0.114344627,
+                        "remov": -0.100270033,
+                        "from": -0.002055954,
+                        "list": -0.002055954,
+                        "of": -0.002055954,
+                        "done": -0.073952466,
+                        "with": -0.073952466,
+                        "complet": -0.000062047,
+                        "nonefeature": -0.227844879
+                      }
+                    },
+                    "task.deleteAll": {
+                      "bias": 0.010685041,
+                      "weights": {
+                        "goodby": -0.029638257,
+                        "for": -0.044419352,
+                        "now": -0.044419352,
+                        "bye": -0.045958776,
+                        "take": -0.031177685,
+                        "care": -0.031177685,
+                        "okay": -0.025077585,
+                        "see": -0.025077585,
+                        "you": -0.046519727,
+                        "later": -0.025077585,
+                        "i": -0.049337026,
+                        "must": -0.028625181,
+                        "go": -0.028625181,
+                        "hello": -0.048072938,
+                        "hi": -0.046309553,
+                        "how": -0.044435497,
+                        "are": -0.015246692,
+                        "do": -0.021442141,
+                        "far": -0.029188808,
+                        "hey": -0.032468464,
+                        "there": -0.032468464,
+                        "howdi": -0.042083245,
+                        "what": -0.036626324,
+                        "up": -0.057655264,
+                        "wat": -0.024407376,
+                        "wad": -0.018523574,
+                        "can": -0.006195449,
+                        "is": -0.01570656,
+                        "your": -0.01570656,
+                        "abil": -0.01570656,
+                        "email": -0.038301334,
+                        "want": -0.010245503,
+                        "to": -0.010245503,
+                        "string": -0.020711843,
+                        "will": -0.010466338,
+                        "clear": 3.869317055,
+                        "all": 3.869317055,
+                        "my": 3.869317055,
+                        "task": 0.877016723,
+                        "show": -0.906560242,
+                        "plan": -0.192806736,
+                        "pend": -0.064003713,
+                        "display": -0.890177608,
+                        "view": -0.880717754,
+                        "activ": -0.030350503,
+                        "delet": -0.222389922,
+                        "number": -0.63466239,
+                        "cancel": -0.030332711,
+                        "remov": -0.026060103,
+                        "from": -0.18942453,
+                        "list": -0.18942453,
+                        "of": -0.18942453,
+                        "done": -0.007301801,
+                        "with": -0.007301801,
+                        "complet": -0.348577887,
+                        "nonefeature": -0.054392401
+                      }
+                    },
+                    "task.showPending": {
+                      "bias": 1.119040599,
+                      "weights": {
+                        "goodby": -0.495368898,
+                        "for": -0.740475535,
+                        "now": -0.740475535,
+                        "bye": -0.766203403,
+                        "take": -0.521096885,
+                        "care": -0.521096885,
+                        "okay": -0.418901354,
+                        "see": -0.418901354,
+                        "you": -0.775762558,
+                        "later": -0.418901354,
+                        "i": -0.838266194,
+                        "must": -0.480268121,
+                        "go": -0.480268121,
+                        "hello": -1.117616177,
+                        "hi": -1.110383868,
+                        "how": -0.800370336,
+                        "are": -0.25237447,
+                        "do": -0.356861174,
+                        "far": -0.547995806,
+                        "hey": -0.63510114,
+                        "there": -0.63510114,
+                        "howdi": -1.095600486,
+                        "what": -0.62779659,
+                        "up": -1.015692472,
+                        "wat": -0.426756978,
+                        "wad": -0.341099054,
+                        "can": -0.104486696,
+                        "is": -0.275473386,
+                        "your": -0.275473386,
+                        "abil": -0.275473386,
+                        "email": -1.08031714,
+                        "want": -0.17135419,
+                        "to": -0.17135419,
+                        "string": -0.357997984,
+                        "will": -0.186643824,
+                        "clear": -2.012159586,
+                        "all": -2.012159586,
+                        "my": -2.012159586,
+                        "task": 4.931250572,
+                        "show": 6.294106007,
+                        "plan": 4.891435146,
+                        "pend": 0.323370337,
+                        "display": 6.503018856,
+                        "view": 6.501047134,
+                        "activ": 4.830997467,
+                        "delet": -1.216053486,
+                        "number": -4.143749237,
+                        "cancel": -0.434817821,
+                        "remov": -0.379576862,
+                        "from": -0.736302376,
+                        "list": -0.736302376,
+                        "of": -0.736302376,
+                        "done": -0.217276245,
+                        "with": -0.217276245,
+                        "complet": -1.896026969,
+                        "nonefeature": -1.150943637
+                      }
+                    },
+                    "task.delete": {
+                      "bias": 0.564049837,
+                      "weights": {
+                        "goodby": -0.17892915,
+                        "for": -0.26830551,
+                        "now": -0.26830551,
+                        "bye": -0.284731537,
+                        "take": -0.195355222,
+                        "care": -0.195355222,
+                        "okay": -0.150444776,
+                        "see": -0.150444776,
+                        "you": -0.281990081,
+                        "later": -0.150444776,
+                        "i": -0.333138078,
+                        "must": -0.180922359,
+                        "go": -0.180922359,
+                        "hello": -0.556243062,
+                        "hi": -0.551424444,
+                        "how": -0.341675609,
+                        "are": -0.091983378,
+                        "do": -0.131545261,
+                        "far": -0.249692261,
+                        "hey": -0.292520821,
+                        "there": -0.292520821,
+                        "howdi": -0.542875528,
+                        "what": -0.246771783,
+                        "up": -0.424759001,
+                        "wat": -0.174355865,
+                        "wad": -0.157805219,
+                        "can": -0.039561898,
+                        "is": -0.114611953,
+                        "your": -0.114611953,
+                        "abil": -0.114611953,
+                        "email": -0.534509599,
+                        "want": -0.06200086,
+                        "to": -0.06200086,
+                        "string": -0.152215764,
+                        "will": -0.090214908,
+                        "clear": -0.100554056,
+                        "all": -0.100554056,
+                        "my": -0.100554056,
+                        "task": -3.340540409,
+                        "show": -0.262067199,
+                        "plan": -0.314101309,
+                        "pend": -0.092316203,
+                        "display": -0.280135721,
+                        "view": -0.274551481,
+                        "activ": -0.29631725,
+                        "delet": 5.004179478,
+                        "number": 6.956852913,
+                        "cancel": 4.955393314,
+                        "remov": 4.877932549,
+                        "from": 1.098312259,
+                        "list": 1.098312259,
+                        "of": 1.098312259,
+                        "done": -3.748687267,
+                        "with": -3.748687267,
+                        "complet": -4.131961346,
+                        "nonefeature": -0.564115584
+                      }
+                    },
+                    "task.complete": {
+                      "bias": -1.071949303,
+                      "weights": {
+                        "goodby": -0.124607399,
+                        "for": -0.189998165,
+                        "now": -0.189998165,
+                        "bye": -0.189518407,
+                        "take": -0.124127634,
+                        "care": -0.124127634,
+                        "okay": -0.10819193,
+                        "see": -0.10819193,
+                        "you": -0.203072846,
+                        "later": -0.10819193,
+                        "i": -0.190669566,
+                        "must": -0.110961579,
+                        "go": -0.110961579,
+                        "hello": -0.146887705,
+                        "hi": -0.139795631,
+                        "how": -0.166770265,
+                        "are": -0.067339607,
+                        "do": -0.094880894,
+                        "far": -0.099430673,
+                        "hey": -0.109520413,
+                        "there": -0.109520413,
+                        "howdi": -0.120094188,
+                        "what": -0.139074072,
+                        "up": -0.210509866,
+                        "wat": -0.0922883,
+                        "wad": -0.064068265,
+                        "can": -0.027541293,
+                        "is": -0.057379469,
+                        "your": -0.057379469,
+                        "abil": -0.057379469,
+                        "email": -0.102692865,
+                        "want": -0.041729175,
+                        "to": -0.041729175,
+                        "string": -0.079707965,
+                        "will": -0.037978791,
+                        "clear": -0.465207875,
+                        "all": -0.465207875,
+                        "my": -0.465207875,
+                        "task": 2.348977327,
+                        "show": -1.242977858,
+                        "plan": -0.050810117,
+                        "pend": -0.022108505,
+                        "display": -1.226884127,
+                        "view": -1.201187491,
+                        "delet": -2.834647655,
+                        "number": 3.860318422,
+                        "cancel": -2.704318285,
+                        "remov": -2.642747402,
+                        "from": -0.748702705,
+                        "list": -0.748702705,
+                        "of": -0.748702705,
+                        "done": 4.858905315,
+                        "with": 4.858905315,
+                        "complet": 7.183125973,
+                        "nonefeature": -0.180265576
+                      }
+                    },
+                    "None": {
+                      "bias": 0.981640341,
+                      "weights": {
+                        "goodby": -0.274402976,
+                        "for": -0.353096932,
+                        "now": -0.353096932,
+                        "bye": -0.379210711,
+                        "take": -0.300516754,
+                        "care": -0.300516754,
+                        "okay": -0.202538401,
+                        "see": -0.202538401,
+                        "you": -0.378469646,
+                        "later": -0.202538401,
+                        "i": -0.507312298,
+                        "must": -0.246817872,
+                        "go": -0.246817872,
+                        "hello": -0.880115628,
+                        "hi": -0.867315531,
+                        "how": -0.517760336,
+                        "are": -0.084861644,
+                        "do": -0.175931215,
+                        "far": -0.43289876,
+                        "hey": -0.473623544,
+                        "there": -0.473623544,
+                        "howdi": -0.843598306,
+                        "what": -0.356249362,
+                        "up": -0.656315565,
+                        "wat": -0.306865096,
+                        "wad": -0.282652825,
+                        "can": -0.091069639,
+                        "is": -0.198381945,
+                        "your": -0.198381945,
+                        "abil": -0.198381945,
+                        "email": -0.820752621,
+                        "want": -0.091818579,
+                        "to": -0.091818579,
+                        "string": -0.260494232,
+                        "will": -0.168675661,
+                        "clear": -0.147775888,
+                        "all": -0.147775888,
+                        "my": -0.147775888,
+                        "task": -0.500783801,
+                        "show": -0.435779363,
+                        "plan": -0.497985214,
+                        "pend": -0.104590356,
+                        "display": -0.449523747,
+                        "view": -0.447207451,
+                        "activ": -0.481857389,
+                        "delet": -0.211941287,
+                        "number": -0.726559937,
+                        "cancel": -0.207253769,
+                        "remov": -0.201085046,
+                        "from": -0.000337121,
+                        "list": -0.000337121,
+                        "of": -0.000337121,
+                        "done": -0.106277213,
+                        "with": -0.106277213,
+                        "complet": -0.000002751,
+                        "nonefeature": 10.841467857
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "fixedError": false,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.7,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.08,
+                  "maxDecimals": 9,
+                  "log": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extraSentences": [
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "how are you doing"
+      ],
+      [
+        "en",
+        "how far"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "Whats up"
+      ],
+      [
+        "en",
+        "wats up"
+      ],
+      [
+        "en",
+        "wad up"
+      ],
+      [
+        "en",
+        "wat can you do"
+      ],
+      [
+        "en",
+        "what is your ability"
+      ],
+      [
+        "en",
+        "what can you do"
+      ],
+      [
+        "en",
+        "%email%"
+      ],
+      [
+        "en",
+        "i want to %string%"
+      ],
+      [
+        "en",
+        "i will %string%"
+      ],
+      [
+        "en",
+        "clear all my tasks"
+      ],
+      [
+        "en",
+        "show plan"
+      ],
+      [
+        "en",
+        "show pending plans"
+      ],
+      [
+        "en",
+        "show pending plans"
+      ],
+      [
+        "en",
+        "show tasks"
+      ],
+      [
+        "en",
+        "display tasks"
+      ],
+      [
+        "en",
+        "display plan"
+      ],
+      [
+        "en",
+        "view plan"
+      ],
+      [
+        "en",
+        "view task"
+      ],
+      [
+        "en",
+        "show activity"
+      ],
+      [
+        "en",
+        "show pending activity"
+      ],
+      [
+        "en",
+        "show pending activity"
+      ],
+      [
+        "en",
+        "show activity"
+      ],
+      [
+        "en",
+        "display activity"
+      ],
+      [
+        "en",
+        "display activity"
+      ],
+      [
+        "en",
+        "view activity"
+      ],
+      [
+        "en",
+        "view activity"
+      ],
+      [
+        "en",
+        "delete %number%"
+      ],
+      [
+        "en",
+        "cancel %number%"
+      ],
+      [
+        "en",
+        "remove %number%"
+      ],
+      [
+        "en",
+        "delete %number% from list of tasks"
+      ],
+      [
+        "en",
+        "done with %number%"
+      ],
+      [
+        "en",
+        "completed task %number%"
+      ]
+    ]
+  },
+  "nerManager": {
+    "settings": {},
+    "threshold": 0.8,
+    "builtins": [
+      "Number",
+      "Ordinal",
+      "Percentage",
+      "Age",
+      "Currency",
+      "Dimension",
+      "Temperature",
+      "DateTime",
+      "PhoneNumber",
+      "IpAddress",
+      "Boolean",
+      "Email",
+      "Hashtag",
+      "URL"
+    ],
+    "namedEntities": {
+      "string": {
+        "type": "regex",
+        "name": "string",
+        "localeFallback": {
+          "*": "en"
+        },
+        "locales": {
+          "en": {
+            "regex": "/\\w/gi"
+          }
+        }
+      },
+      "number": {
+        "type": "regex",
+        "name": "number",
+        "localeFallback": {
+          "*": "en"
+        },
+        "locales": {
+          "en": {
+            "regex": "/\\d+/g"
+          }
+        }
+      }
+    }
+  },
+  "slotManager": {},
+  "responses": {
+    "en": {
+      "input.email": [
+        {
+          "response": "Greetings {{email}}"
+        }
+      ],
+      "greetings.bye": [
+        {
+          "response": "Till next time"
+        },
+        {
+          "response": "see you soon!"
+        }
+      ],
+      "greetings.hello": [
+        {
+          "response": "Hey there!"
+        },
+        {
+          "response": "Greetings!"
+        },
+        {
+          "response": "Hi!"
+        }
+      ],
+      "task.add": [
+        {
+          "response": "{{taskToAdd}}"
+        }
+      ],
+      "task.showPending": [
+        {
+          "response": ""
+        }
+      ]
+    }
+  },
+  "actions": {
+    "task.showPending": [
+      {
+        "action": "showPendingAction",
+        "parameters": [
+          ""
+        ]
+      }
+    ],
+    "greetings.hello": [
+      {
+        "action": "greet",
+        "parameters": [
+          ""
+        ]
+      }
+    ],
+    "greetings.ability": [
+      {
+        "action": "abilityEnquiryAction",
+        "parameters": [
+          ""
+        ]
+      }
+    ],
+    "task.add": [
+      {
+        "action": "createTaskAction",
+        "parameters": [
+          {
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "task.deleteAll": [
+      {
+        "action": "deleteAllTasksAction",
+        "parameters": [
+          ""
+        ]
+      }
+    ],
+    "task.delete": [
+      {
+        "action": "deleteTaskAction",
+        "parameters": [
+          {
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "task.complete": [
+      {
+        "action": "completeTaskAction",
+        "parameters": [
+          {
+            "settings": {}
+          }
+        ]
+      }
+    ]
+  },
+  "utteranceDict": {
+    "?": "help"
+  }
+}

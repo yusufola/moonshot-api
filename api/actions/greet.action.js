@@ -46,6 +46,7 @@ const greetAction = (req, res, next) => {
       response += `<br>*Try saying*\n\n
 _*I want to clean my workspace* (adds an activity to do)_\n\n
 _*show plans* (see planned activities)_\n\n
+_*show completed activities* (see completed activities)_\n\n
 _*done* (marks an activity as done after you choose)_\n\n
 _*cancel a plan* (delete an activity after you choose)_\n\n
 _*clear all my tasks* (caution: deletes all your planned activities)_\n\n
