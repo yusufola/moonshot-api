@@ -8,7 +8,7 @@ const greetAction = (req, res, next) => {
 
       const userTasks = await taskService().getByAuthor(req.user.id);
 
-      let response = `${input} ${username}\n I'm available to help manage your personal schedules and activities`;
+      let response = `${input} ${username}\n\n I'm available to help manage your personal schedules and activities\n\n`;
 
       if (userTasks.length > 0) {
         const taskToString = await userTasks.reduce(
@@ -20,10 +20,10 @@ const greetAction = (req, res, next) => {
           },
           ""
         );
-        response += `*You have _${userTasks.length}_ task${
+        response += `*You have _${userTasks.length}_ thing${
           userTasks.length > 1 ? "s" : ""
-        }*\n${taskToString}`;
-        response += `<br>_Hint:_\n_Say something like_:\n_*I want to call Mr Adam* (add an activity todo)_`;
+        } to do*\n${taskToString}`;
+        response += `<br>*_Hint:_*\n_Say something like_:\n_*I want to call Mr Adam* (add an activity todo)_`;
       } else {
         response += `*You currently have no task*.\nWhat do you want to do later?\n\n_one at a time_
           `;
