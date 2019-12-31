@@ -8,7 +8,7 @@ const greetAction = (req, res, next) => {
 
       const userTasks = await taskService().getByAuthor(req.user.id);
 
-      let response = `${input} ${username}\n\nI'm your *Calendar*, always available to help manage your personal schedules and plan your activities\n\n`;
+      let response = `${input} ${username}\n\nI'm always available to help manage your personal schedules and plan your activities. You can call me your *Calendar*\n\n`;
 
       if (userTasks.length > 0) {
         const taskToString = await userTasks.reduce(
@@ -28,7 +28,7 @@ const greetAction = (req, res, next) => {
           `;
       }
 
-      response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to call the bank manager* (adds an activity to do)_\n\n_*show plans* (see planned activities)_\n\n_*what can you do?* (tells you eveything I can do)_`;
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to clean my workspace* (adds an activity to do)_\n\n_*show plans* (see planned activities)_\n\n_*what can you do?* (tells you eveything I can do)_`;
 
       return response;
     } catch (error) {
