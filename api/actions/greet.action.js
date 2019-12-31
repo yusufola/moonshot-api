@@ -4,11 +4,12 @@ const greetAction = (req, res, next) => {
   const welcome = async (input, a) => {
     try {
       const { user } = req;
-      const username = user.username || user.mobile_number;
+      const username =
+        user.username || `${user.mobile_number}(I don't know your name yet)`;
 
       const userTasks = await taskService().getByAuthor(req.user.id);
 
-      let response = `${input} ${username}\n\nI'm your *Calendar*, always available to help manage your personal schedules and activities\n\n`;
+      let response = `${input} ${username}\n\nI'm your *Calendar*, always available to help manage your personal schedules and plan your activities\n\n`;
 
       if (userTasks.length > 0) {
         const taskToString = await userTasks.reduce(
@@ -24,7 +25,7 @@ const greetAction = (req, res, next) => {
           userTasks.length > 1 ? "s" : ""
         } to do*\n${taskToString}`;
       } else {
-        response += `*You currently have nothing planned to do*.\nWhat do you want to do later?\n\n_one at a time_
+        response += `<br>*You currently have nothing planned*.\nWhat do you have in plan to do later?
           `;
       }
 
