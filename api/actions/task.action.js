@@ -49,7 +49,9 @@ const taskAction = (req, res, next) => {
 
       const createdTask = await taskService().deleteAllAuthorTasks(user.id);
 
-      let response = `Your tasks have been cleared\n You currently have no tasks.\nYou can add new things to do any time you want.`;
+      let response = `Your tasks have been cleared\n<br>*You currently have no tasks.*\nYou can add new things to do any time you want.`;
+
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to clean my workspace* (adds an activity to do)_\n\n_*what can you do?* (tells you eveything I can do)_`;
 
       return response;
     } catch (error) {
@@ -82,7 +84,9 @@ const taskAction = (req, res, next) => {
         taskId: task.id
       });
 
-      let response = `Your task _${task.title}_ has been deleted.\nYou can add new things to do any time you want.`;
+      let response = `Your task _${task.title}_ has been deleted.\n<br>You can add new things to do any time you want.`;
+
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to clean my workspace* (adds an activity to do)_\n\n_*what can you do?* (tells you eveything I can do)_`;
 
       return response;
     } catch (error) {
@@ -115,7 +119,9 @@ const taskAction = (req, res, next) => {
         taskId: task.id
       });
 
-      let response = `Your task _${task.title}_ ✅ has been checked as done.\n.`;
+      let response = `Well done!\n _${task.title}_ ✅ has been checked as done.\n.`;
+
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*show completed* (shows all activities you are done with)_`;
 
       return response;
     } catch (error) {
@@ -159,11 +165,47 @@ const taskAction = (req, res, next) => {
     }
   };
 
+  const showCompleted = async (input, a) => {
+    try {
+      const { user } = req;
+      const username = user.username || `@${user.mobile_number}`;
+
+      const userTasks = await taskService().getByAuthor(req.user.id, true);
+
+      let response = "";
+
+      if (userTasks.length > 0) {
+        const taskToString = await userTasks.reduce(
+          (string, currentTask, i) => {
+            string += `✅ ${currentTask.title}. ${
+              currentTask.isDone ? "✅" : ""
+            }\n`;
+            return string;
+          },
+          ""
+        );
+        response += `*_${userTasks.length}_ job${
+          userTasks.length > 1 ? "s" : ""
+        }  well done!* 👏\n\n${taskToString}`;
+
+        response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to clean my workspace* (adds an activity to do)_\n\n_*what can you do?* (tells you eveything I can do)_`;
+      } else {
+        response += `Hmm!\n*You haven't completed any activity*.`;
+        response += `<br>*_Hint_* | _Say something like_:\n\n_*show plans* (see planned activities)_\n\n_*done with 1* (marks first task/or any number you provide as done)_\n\n_*cancel 1* (deletes first task/or any number you provide)_`;
+      }
+
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return {
     createTask,
     deleteAllAuthorTasks,
     deleteTask,
     showPending,
+    showCompleted,
     completeTask
   };
 };

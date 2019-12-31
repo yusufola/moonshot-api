@@ -8,6 +8,7 @@ const actionService = (req, res, next) => {
     deleteTask,
     deleteAllAuthorTasks,
     completeTask,
+    showCompleted,
     showPending
   } = taskActions(req, res, next);
 
@@ -19,6 +20,7 @@ const actionService = (req, res, next) => {
   const deleteTaskAction = (input, a) => deleteTask(input, a);
   const completeTaskAction = (input, a) => completeTask(input, a);
   const showPendingAction = (input, a) => showPending(input, a);
+  const showCompletedAction = (input, a) => showCompleted(input, a);
 
   return {
     greet,
@@ -27,6 +29,7 @@ const actionService = (req, res, next) => {
     completeTaskAction,
     deleteTaskAction,
     showPendingAction,
+    showCompletedAction,
     deleteAllTasksAction,
     abilityEnquiryAction
   };

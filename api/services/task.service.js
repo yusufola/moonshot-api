@@ -12,9 +12,9 @@ const taskService = () => {
   };
 
   //returns pending tasks
-  const getByAuthor = async authorId => {
+  const getByAuthor = async (authorId, isDone = false) => {
     try {
-      const tasks = await Task.find({ author: authorId, isDone: false });
+      const tasks = await Task.find({ author: authorId, isDone });
       return tasks;
     } catch (error) {
       throw error;

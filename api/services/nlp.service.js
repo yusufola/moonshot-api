@@ -58,6 +58,7 @@ const nlpService = (req, res, next) => {
     //clear all tasks
     classifier.addDocument("en", "clear all my tasks", "task.deleteAll");
 
+    //show plans
     classifier.addDocument("en", "show plan", "task.showPending");
     classifier.addDocument("en", "show pending plans", "task.showPending");
     classifier.addDocument("en", "show pending plans", "task.showPending");
@@ -76,6 +77,24 @@ const nlpService = (req, res, next) => {
     classifier.addDocument("en", "display activity", "task.showPending");
     classifier.addDocument("en", "view activity", "task.showPending");
     classifier.addDocument("en", "view activity", "task.showPending");
+    //show completed plans
+    classifier.addDocument("en", "show complete", "task.showCompleted");
+    classifier.addDocument(
+      "en",
+      "show complete activity",
+      "task.showCompleted"
+    );
+    classifier.addDocument(
+      "en",
+      "view complete activity",
+      "task.showCompleted"
+    );
+    classifier.addDocument("en", "show completed", "task.showCompleted");
+    classifier.addDocument(
+      "en",
+      "display complete activity",
+      "task.showCompleted"
+    );
 
     //delete task
     classifier.addDocument("en", "delete %number%", "task.delete");
@@ -105,6 +124,7 @@ const nlpService = (req, res, next) => {
     //display tasks
     classifier.addAnswer("en", "task.showPending", "");
     classifier.addAction("task.showPending", "showPendingAction", [""]);
+    classifier.addAction("task.showCompleted", "showCompletedAction", [""]);
 
     //actions
     classifier.addAction("greetings.hello", "greet", [""]);
