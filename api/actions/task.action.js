@@ -115,7 +115,7 @@ const taskAction = (req, res, next) => {
       });
 
       let response = `Your task _${task.title}
-      ✅_ has been checked as done.\n.`;
+      _ ✅ has been checked as done.\n.`;
 
       return response;
     } catch (error) {
