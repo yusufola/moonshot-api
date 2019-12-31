@@ -114,8 +114,7 @@ const taskAction = (req, res, next) => {
         taskId: task.id
       });
 
-      let response = `Your task _${task.title}
-      _ ✅ has been checked as done.\n.`;
+      let response = `Your task _${task.title}_ ✅ has been checked as done.\n.`;
 
       return response;
     } catch (error) {
