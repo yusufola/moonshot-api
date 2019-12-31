@@ -22,9 +22,9 @@ const greetAction = (req, res, next) => {
         );
         response += `<br>*You have _${userTasks.length}_ thing${
           userTasks.length > 1 ? "s" : ""
-        } to do*\n${taskToString}`;
+        } to do*\n\n${taskToString}`;
       } else {
-        response += `<br>*You currently have nothing planned*.\nWhat do you plan to do later?
+        response += `<br>*You currently have nothing planned*.\n\nWhat do you plan to do later?
           `;
       }
 
