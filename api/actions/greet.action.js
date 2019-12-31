@@ -8,7 +8,7 @@ const greetAction = (req, res, next) => {
 
       const userTasks = await taskService().getByAuthor(req.user.id);
 
-      let response = `${input} ${username}\n\nI'm always available to help manage your personal schedules and plan your activities. You can call me your *Calendar*\n\n`;
+      let response = `${input} ${username}\n\nI'm always available to help manage your personal schedules and plan your activities. You can call me your *Calendar* 📅 🤖\n\n`;
 
       if (userTasks.length > 0) {
         const taskToString = await userTasks.reduce(
