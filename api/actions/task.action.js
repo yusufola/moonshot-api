@@ -33,7 +33,8 @@ const taskAction = (req, res, next) => {
         isDone: false
       });
 
-      let response = `NOTED: _${createdTask.title}_\n Any other thing you want to do later?`;
+      let response = `Got it! \n_${createdTask.title}_\n<br>Any other thing you want to do later?`;
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*show plans* (see planned activities)_\n\n_*done with 1* (marks first task/or any number you provide as done)_\n\n_*cancel 1* (deletes first task/or any number you provide)_`;
 
       return response;
     } catch (error) {
@@ -144,12 +145,13 @@ const taskAction = (req, res, next) => {
         response += `*You have _${userTasks.length}_ thing${
           userTasks.length > 1 ? "s" : ""
         } to do*\n\n${taskToString}`;
-      } else {
-        response += `*You currently have nothing planned*.\n\nWhat do you plan to do later?
-          `;
-      }
 
-      response += `<br>*_Hint_* | _Say something like_:\n\n_*done with 1* (marks first task/or any number you provide as done)_\n\n_*cancel 1* (deletes first task/or any number you provide)_`;
+        response += `<br>*_Hint_* | _Say something like_:\n\n_*done with 1* (marks first task/or any number you provide as done)_\n\n_*cancel 1* (deletes first task/or any number you provide)_`;
+      } else {
+        response += `*You currently have nothing planned*.\n\nWhat do you plan to do later?`;
+
+        response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to clean my workspace* (adds an activity to do)_\n\n_*what can you do?* (tells you eveything I can do)_`;
+      }
 
       return response;
     } catch (error) {
