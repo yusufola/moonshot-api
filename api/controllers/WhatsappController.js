@@ -13,9 +13,12 @@ const WhatsappController = () => {
 
     try {
       const nlpResult = await nlpService(req, res, next).detectIntent(message);
-      const response = nlpResult.response;
+      const response = nlpResult.response.split("<br>");
 
-      twiml.message(response);
+      await response.forEach(async res => {
+        await twiml.message(res);
+      });
+
       // twiml.message("e.g Launch first startup");
 
       res.set("Content-Type", "text/xml");
