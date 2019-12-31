@@ -28,7 +28,7 @@ const greetAction = (req, res, next) => {
           `;
       }
 
-      response += `<br>*_Hint:_* | _Say something like_:\n\n_*I want to call Mr Adam* (add an activity todo)_`;
+      response += `<br>*_Hint_* | _Say something like_:\n\n_*I want to call Mr Adam* (add an activity todo)_\n_*my plan* (displays planned activities)_`;
 
       return response;
     } catch (error) {
