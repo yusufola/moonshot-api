@@ -65,6 +65,15 @@ const nlpService = (req, res, next) => {
     classifier.addDocument("en", "display tasks", "task.showPending");
     classifier.addDocument("en", "display plan", "task.showPending");
     classifier.addDocument("en", "view plan", "task.showPending");
+    classifier.addDocument("en", "view task", "task.showPending");
+    classifier.addDocument("en", "show activity", "task.showPending");
+    classifier.addDocument("en", "show pending activity", "task.showPending");
+    classifier.addDocument("en", "show pending activity", "task.showPending");
+    classifier.addDocument("en", "show activity", "task.showPending");
+    classifier.addDocument("en", "display activity", "task.showPending");
+    classifier.addDocument("en", "display activity", "task.showPending");
+    classifier.addDocument("en", "view activity", "task.showPending");
+    classifier.addDocument("en", "view activity", "task.showPending");
 
     //delete task
     classifier.addDocument("en", "delete %number%", "task.delete");

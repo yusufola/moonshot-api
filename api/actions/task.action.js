@@ -141,7 +141,7 @@ const taskAction = (req, res, next) => {
           },
           ""
         );
-        response += `<br>*You have _${userTasks.length}_ thing${
+        response += `*You have _${userTasks.length}_ thing${
           userTasks.length > 1 ? "s" : ""
         } to do*\n\n${taskToString}`;
       } else {
