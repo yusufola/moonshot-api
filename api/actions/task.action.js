@@ -23,8 +23,19 @@ const taskAction = (req, res, next) => {
         return x;
       }, []);
 
-      if (!entities.taskToAdd)
-        return "Didn't get that.\nKindly rephase e.g _I want to go shopping_";
+      if (!entities.taskToAdd) {
+        let errResponse = `Didn't get that.\n\n`;
+
+        errResponse += `<br>*Try saying*\n\n
+_*I want to clean my workspace* (adds an activity to do)_\n\n
+_*show plans* (see planned activities)_\n\n
+_*show completed activities* (see completed activities)_\n\n
+_*done* (marks an activity as done after you choose)_\n\n
+_*cancel a plan* (delete an activity after you choose)_\n\n
+_*clear all my tasks* (caution: deletes all your planned activities)_\n\n
+_*what can you do?* (tells you eveything I can do)_`;
+        return errResponse;
+      }
 
       const task = entities.taskToAdd; //TODO: find an alternative to this
       const createdTask = await taskService().create({
